@@ -1,0 +1,40 @@
+# Build output directories
+build/
+bin/
+out/
+target/
+
+# Eclipse metadata and configuration files
+.metadata/
+.settings/
+.project
+.classpath
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# NetBeans project files
+nbproject/
+private/
+build.xml
+nbbuild/
+dist/
+nb-configuration.xml
+
+# Log files
+*.log
+logs/
+
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
