@@ -1,5 +1,6 @@
 FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
-COPY readcart.war /usr/local/tomcat/webapps/ROOT.war
+COPY src/main/webapp/ /usr/local/tomcat/webapps/ROOT/
+COPY build/classes/ /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
