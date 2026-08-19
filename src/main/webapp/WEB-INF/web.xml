@@ -5,7 +5,80 @@
          version="6.0"
          metadata-complete="false">
   <display-name>ReadCart</display-name>
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
+  <servlet>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProductDetailServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.ProductDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductDetailServlet</servlet-name>
+    <url-pattern>/product-detail</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.CheckoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/checkout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>OrderHistoryServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.OrderHistoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderHistoryServlet</servlet-name>
+    <url-pattern>/orders</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.readcart.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
 </web-app>
