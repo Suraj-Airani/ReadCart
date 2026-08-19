@@ -6,33 +6,25 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private static final String DB_URL =
-            "jdbc:mysql://localhost:3306/readcart_ecommerce?useSSL=false&serverTimezone=UTC";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "root";
-    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     private DBConnection() {
     }
 
     public static Connection getConnection() {
         try {
-            Class.forName(JDBC_DRIVER);
-            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("MySQL JDBC Driver not found.", e);
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to connect to database.", e);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException("Database connection failed", e);
         }
     }
 
     public static void closeConnection(Connection conn) {
         if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
     }
 }
